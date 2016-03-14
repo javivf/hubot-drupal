@@ -1,4 +1,4 @@
-# hubot-hubot-drupal
+# hubot-drupal
 
 Drupal.org URL handler
 
@@ -8,19 +8,19 @@ See [`src/hubot-drupal.coffee`](src/hubot-drupal.coffee) for full documentation.
 
 In hubot project repo, run:
 
-`npm install hubot-hubot-drupal --save`
+`npm install hubot-drupal --save`
 
-Then add **hubot-hubot-drupal** to your `external-scripts.json`:
+Then add **hubot-drupal** to your `external-scripts.json`:
 
 ```json
 [
-  "hubot-hubot-drupal"
+  "hubot-drupal"
 ]
 ```
 
 ## Sample Interaction
 
 ```
-user1>> hubot hello
-hubot>> hello!
+user1>> hubot dm views
+hubot>> [Views] - https://www.drupal.org/project/views ...
 ```
