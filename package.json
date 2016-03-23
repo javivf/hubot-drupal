@@ -1,7 +1,7 @@
 {
-  "name": "hubot-hubot-drupal",
+  "name": "hubot-drupal",
   "description": "Drupal.org URL handler",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Mike Bell <hello@mikebell.io>",
   "license": "MIT",
 
@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-hubot-drupal.git"
+    "url": "git://github.com/mikebell/hubot-drupal"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-hubot-drupal/issues"
+    "url": "https://github.com/mikebell/hubot-drupal"
   },
 
   "dependencies": {
