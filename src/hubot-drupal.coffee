@@ -21,6 +21,9 @@ module.exports = (robot) ->
     msg
       .http(msg.match[0])
       .get() (err, res, body) ->
+        if err
+          res.send "Encountered an error :( #{err}"
+          return
         $ = require("cheerio").load(body)
         title = $('#page-subtitle').text()
         projectname = $('.field-name-field-project .field-item').text()
@@ -32,6 +35,9 @@ module.exports = (robot) ->
     msg
       .http('https://www.drupal.org/project/' + msg.match[1])
       .get() (err, res, body) ->
+        if err
+          res.send "Encountered an error :( #{err}"
+          return
         $ = require("cheerio").load(body)
         title = $('#page-subtitle').text()
         url = 'https://www.drupal.org/project/' + msg.match[1]
