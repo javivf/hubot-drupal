@@ -25,9 +25,6 @@ module.exports = (robot) ->
         title = $('#page-subtitle').text()
         projectname = $('.field-name-field-project .field-item').text()
         issuestatus = $('.field-name-field-issue-status .field-item').text()
-        # issuebody = $('.field-name-body .field-item p').first().text()
-
-        console.log(err)
 
         msg.send '[' + projectname + '] - ' + title + ' [' + issuestatus + ']'
 
