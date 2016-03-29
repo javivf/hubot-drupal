@@ -21,7 +21,7 @@ Then add **hubot-drupal** to your `external-scripts.json`:
 ## Sample Interaction
 
 ```
-user1>> hubot dm views
+user1>> dm views
 hubot>> [Views] - https://www.drupal.org/project/views ...
 
 user1>> https://www.drupal.org/node/2645010
