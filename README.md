@@ -23,4 +23,7 @@ Then add **hubot-drupal** to your `external-scripts.json`:
 ```
 user1>> hubot dm views
 hubot>> [Views] - https://www.drupal.org/project/views ...
+
+user1>> https://www.drupal.org/node/2645010
+hubot>> [Coding Standards] - Switch to PSR-2 as of Drupal 9 [Closed (won't fix)]
 ```
