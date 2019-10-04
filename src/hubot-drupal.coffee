@@ -17,8 +17,7 @@
 #   mikebell
 
 module.exports = (robot) ->
-  robot.hear /https?:\/\/(www\.)?drupal.org\/node\/(\w+)(\smore)?/i, (msg) ->
-    url = msg.match[0].replace(/\smore/, "")
+  fetch_url = (url, msg) ->
     msg
       .http(url)
       .get() (err, res, body) ->
@@ -34,7 +33,7 @@ module.exports = (robot) ->
 
         msg.send '[' + projectname + '] - ' + title + ' [' + issuestatus + ']'
 
-        if msg.match[3] is " more"
+        if msg.match[3] is " more" or msg.match[4] is " more"
           priority = $('.field-name-field-issue-priority .field-item').text()
           created = $('.field-name-project-issue-created .field-item').text()
           updated = $('.field-name-project-issue-updated .field-item').text()
@@ -43,6 +42,14 @@ module.exports = (robot) ->
           msg.send 'Priority: ' + priority
           msg.send 'Created: ' + created
           msg.send 'Updated: ' + updated
+
+  robot.hear /https?:\/\/(www\.)?drupal.org\/node\/(\w+)(\smore)?/i, (msg) ->
+    url = msg.match[0].replace(/\smore/, "")
+    fetch_url(url, msg)
+
+  robot.hear /https?:\/\/(www\.)?drupal.org\/project\/(\w+)\/issues\/(\w+)(\smore)?/i, (msg) ->
+    url = msg.match[0].replace(/\smore/, "")
+    fetch_url(url, msg)
 
   robot.hear /dm (\w*)/i, (msg) ->
     msg
